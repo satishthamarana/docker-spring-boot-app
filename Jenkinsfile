@@ -16,7 +16,7 @@ pipeline{
         sh 'mvn -B -DskipTests clean package'
         sh 'echo $USER'
         sh 'echo whoami'
-        sh 'aws ecr get-login --no-include-email | sed "s|https://||"'
+        sh 'aws ecr get-login --no-include-email | sed 's|https://||''
       }
     }
     stage('Push images to aws ecr'){
